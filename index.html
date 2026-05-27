@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Doria — Sexóloga y Coach de Intimidad para Latinas en Estados Unidos">
+  <title>Doria — Sexóloga y Coach de Intimidad para Latinas en Estados Unidos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terracotta:    #8B3A2A;
+      --terracotta-dk: #6e2d1e;
+      --cream:         #FAF6F1;
+      --blush:         #F0E8DF;
+      --blush-dk:      #e0d0c4;
+      --ink:           #2C1810;
+      --ink-mid:       #5a3a2d;
+      --ink-light:     #8a6a5e;
+      --serif:         'Cormorant Garamond', Georgia, serif;
+      --sans:          'DM Sans', system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Typography ─────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    /* ── Buttons ─────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 1.75rem;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      border: 1px solid transparent;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: var(--cream);
+      border-color: var(--terracotta);
+    }
+    .btn-primary:hover { background: var(--terracotta-dk); border-color: var(--terracotta-dk); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+    .btn-cream {
+      background: var(--cream);
+      color: var(--terracotta);
+      border-color: var(--cream);
+    }
+    .btn-cream:hover { background: transparent; color: var(--cream); border-color: var(--cream); }
+
+    /* ── Scroll animations ───────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.22s; }
+    .delay-3 { transition-delay: 0.34s; }
+    .delay-4 { transition-delay: 0.46s; }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #nav.scrolled {
+      background: var(--cream);
+      box-shadow: 0 1px 0 var(--blush-dk);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-cta { padding: 0.6rem 1.25rem; font-size: 0.72rem; }
+
+    /* ── Hero ─────────────────────────────────────────────── */
+    #hero {
+      min-height: 100svh;
+      background: var(--blush);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 100svh;
+    }
+
+    .hero-content {
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3.5rem 2rem 4rem;
+    }
+
+    .hero-eyebrow { margin-bottom: 1.4rem; }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.6rem;
+      color: var(--ink);
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.6rem;
+    }
+    .hero-rule span { flex: 1; height: 1px; background: var(--blush-dk); }
+    .hero-rule i { width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); display: block; }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      max-width: 44ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        padding: 7rem 8rem 5rem;
+        max-width: 860px;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .hero-content { padding: 8rem 10rem 6rem; }
+    }
+
+    /* ── Section wrapper ─────────────────────────────────── */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-wrap { padding: 8rem 4rem; }
+    }
+
+    /* ── Pain ─────────────────────────────────────────────── */
+    #pain { background: var(--cream); }
+
+    .pain-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .pain-header .eyebrow { margin-bottom: 0.85rem; }
+    .pain-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+
+    @media (min-width: 560px) {
+      .pain-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .pain-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .pain-card {
+      background: var(--blush);
+      padding: 2.5rem 2rem;
+      transition: background 0.25s;
+    }
+    .pain-card:hover { background: var(--blush-dk); }
+
+    .pain-card::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 2px;
+      background: var(--terracotta);
+      margin-bottom: 1.5rem;
+    }
+
+    .pain-card p {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    /* ── About ────────────────────────────────────────────── */
+    #about { background: var(--blush); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 5fr 7fr;
+        gap: 6rem;
+      }
+    }
+
+    .about-img-wrap {
+      position: relative;
+      max-width: 380px;
+    }
+
+    .about-img {
+      aspect-ratio: 3/4;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* offset border accent */
+    .about-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(139, 58, 42, 0.25);
+      transform: translate(14px, 14px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .about-eyebrow { margin-bottom: 0.85rem; }
+
+    .about-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.75rem;
+    }
+
+    .about-body p {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      margin-bottom: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .signature {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--terracotta);
+      margin-top: 1.75rem;
+      display: block;
+    }
+
+    /* ── How it works ─────────────────────────────────────── */
+    #how { background: var(--cream); }
+
+    .how-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .how-header .eyebrow { margin-bottom: 0.85rem; }
+    .how-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 600px) {
+      .steps { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .step {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    /* vertical connector between steps (desktop) */
+    @media (min-width: 600px) {
+      .step + .step::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 38%;
+        background: var(--blush-dk);
+      }
+    }
+
+    /* horizontal connector between steps (mobile) */
+    @media (max-width: 599px) {
+      .step + .step::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 38%;
+        height: 1px;
+        background: var(--blush-dk);
+      }
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--blush-dk);
+      margin-bottom: 0.75rem;
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--terracotta);
+      margin-bottom: 0.65rem;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    /* ── CTA banner ───────────────────────────────────────── */
+    #cta { background: var(--terracotta); }
+
+    .cta-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 6.5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-wrap .eyebrow {
+      color: rgba(250, 246, 241, 0.55);
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      color: rgba(250, 246, 241, 0.7);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: var(--blush);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(240, 232, 223, 0.1);
+    }
+
+    @media (min-width: 640px) {
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--cream);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-domain {
+      font-size: 0.75rem;
+      color: rgba(240, 232, 223, 0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-link {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: rgba(240, 232, 223, 0.65);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .footer-link:hover { color: var(--cream); }
+
+    .footer-link svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      font-size: 0.72rem;
+      color: rgba(240, 232, 223, 0.25);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="nav">
+    <span class="nav-logo">Doria Alvarez</span>
+    <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="btn btn-primary nav-cta" target="_blank" rel="noopener">Agenda una llamada</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-grid">
+
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow reveal">Sexóloga Clínica · Coach de Relaciones</p>
+        <h1 class="hero-headline reveal delay-1">
+          Amas a tu pareja.<br>
+          <em>Y aún así,<br>te sientes sola.</em>
+        </h1>
+        <div class="hero-rule reveal delay-2">
+          <span></span><i></i><span style="max-width:3rem"></span>
+        </div>
+        <p class="hero-sub reveal delay-3">
+          Trabajo con mujeres latinas que sienten que algo se apagó — en su relación, en su cuerpo, en ellas mismas — y que están listas para recuperarlo.
+        </p>
+        <div class="hero-ctas reveal delay-4">
+          <a href="#" class="btn btn-primary">Descubre qué está bloqueando tu relación</a>
+          <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="btn btn-outline" target="_blank" rel="noopener">Agenda una llamada</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PAIN ── -->
+  <section id="pain">
+    <div class="section-wrap">
+      <div class="pain-header">
+        <p class="eyebrow reveal">¿Te reconoces aquí?</p>
+        <h2 class="reveal delay-1">Lo que sientes<br>pero no has podido nombrar</h2>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card reveal delay-1">
+          <p>"Ya no siento deseo — y eso me hace sentir que hay algo mal en mí."</p>
+        </div>
+        <div class="pain-card reveal delay-2">
+          <p>"Siento que mi cuerpo ya no me pertenece, y no sé cómo volver a él."</p>
+        </div>
+        <div class="pain-card reveal delay-3">
+          <p>"Hablamos, pero no nos comunicamos. Cada conversación termina igual."</p>
+        </div>
+        <div class="pain-card reveal delay-4">
+          <p>"Vivimos juntos, pero la distancia entre nosotros se siente enorme."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="section-wrap">
+      <div class="about-grid">
+
+        <div class="about-img-wrap reveal">
+          <div class="about-img">
+            <img src="Photo_Doria.JPG" alt="Doria Alvarez">
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p class="eyebrow about-eyebrow reveal">Sobre Doria</p>
+          <h2 class="about-headline reveal delay-1">Formada para escuchar.<br>Aquí para acompañarte.</h2>
+          <div class="about-body">
+            <p class="reveal delay-2">
+              Soy Doria Alvarez, sexóloga clínica y coach de relaciones certificada, con formación especializada en salud sexual femenina y dinámicas de pareja. Trabajo exclusivamente en español con mujeres latinas que viven en Estados Unidos — porque creo que hay cosas que solo se pueden decir en el idioma en que las sentiste. Aquí no tienes que traducir tus emociones ni buscar las palabras correctas en otra lengua. Puedes hablar libremente, en tu idioma, desde tu experiencia.
+            </p>
+            <p class="reveal delay-3">
+              Sé que muchas cargamos años de silencio, mensajes contradictorios sobre nuestro cuerpo y una profunda soledad dentro de relaciones que, en el papel, "funcionan". Mi trabajo es acompañarte a deshacer eso — con claridad, con gentileza, y con herramientas que realmente cambian las cosas.
+            </p>
+          </div>
+          <span class="signature reveal delay-4">Doria Alvarez</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section id="how">
+    <div class="section-wrap">
+      <div class="how-header">
+        <p class="eyebrow reveal">El proceso</p>
+        <h2 class="reveal delay-1">Así empezamos</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal delay-1">
+          <div class="step-num">01</div>
+          <div class="step-title">Cuéntame cómo estás</div>
+          <p class="step-desc">Responde unas preguntas breves y confidenciales sobre tu relación y tu bienestar. Sin etiquetas, sin juicio — solo tú, siendo honesta contigo misma.</p>
+        </div>
+        <div class="step reveal delay-2">
+          <div class="step-num">02</div>
+          <div class="step-title">Te escribo personalmente</div>
+          <p class="step-desc">Leo lo que compartiste y te envío un mensaje directo con lo que observo y algunas reflexiones para empezar a mover las cosas.</p>
+        </div>
+        <div class="step reveal delay-3">
+          <div class="step-num">03</div>
+          <div class="step-title">Agendamos tu primera sesión</div>
+          <p class="step-desc">Una llamada de 30 minutos por $30 USD. Sin compromiso a largo plazo — solo un espacio para conocernos, hablar de lo que estás viviendo, y ver cómo puedo acompañarte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <section id="cta">
+    <div class="cta-wrap">
+      <p class="eyebrow reveal">Da el primer paso</p>
+      <h2 class="cta-headline reveal delay-1">Ya es tiempo de que alguien te escuche de verdad.</h2>
+      <p class="cta-sub reveal delay-2">Sin juicio. En tu idioma. Con una metodología que funciona.</p>
+      <div class="reveal delay-3">
+        <a href="#" class="btn btn-cream">Descubre qué está bloqueando tu relación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-brand">Doria Alvarez</span>
+        <span class="footer-domain">Sexóloga &amp; Coach de Relaciones · doriaalvarez.com</span>
+      </div>
+      <nav class="footer-links" aria-label="Redes sociales">
+        <a href="https://www.instagram.com/doriasexologa" class="footer-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.tiktok.com/@soydoriaalvarez" class="footer-link" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:15px;height:15px;">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+          </svg>
+          TikTok
+        </a>
+        <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="footer-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </nav>
+    </div>
+    <p class="footer-bottom">© 2026 Doria Alvarez. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Reveal on scroll via IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
