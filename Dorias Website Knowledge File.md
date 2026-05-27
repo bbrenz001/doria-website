@@ -45,6 +45,7 @@ Last updated: May 2026
 **Brian's role** Building the quiz funnel, automation stack, and content system. This is also a real portfolio project for MindshiftOS LLC.
 ## What exists
 - `index.html` — single page site, built via Claude Code
+- GitHub repo ✅: https://github.com/bbrenz001/doria-website
 - Hosted locally at: C:/Users/Brian/Google Drive/[path]/doria-website/index.html
 - Domain decided: doriaalvarez.com (available on Namecheap, not yet purchased)
 - doriasexologa.com to redirect to doriaalvarez.com
