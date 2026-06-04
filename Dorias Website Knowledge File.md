@@ -56,7 +56,7 @@ Last updated: May 2026
 - No backend yet
 
 ## Decisions made
-- Hero photo removed ✅ — only the About section photo remains
+- Hero photo ✅ — Photo_Doria.JPG in both hero and About sections; responsive: stacked crop on mobile, side-by-side on tablet (iPad looks great), nav-offset positioning on laptop
 - Photo filename: Photo_Doria.JPG (already in project folder)
 - All "Agenda una llamada" buttons link to WhatsApp with pre-filled message:
   https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo.

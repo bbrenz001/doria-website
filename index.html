@@ -143,11 +143,25 @@
     }
 
     .hero-content {
-      order: 2;
+      order: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 3.5rem 2rem 4rem;
+      padding: 5.5rem 2rem 3rem;
+    }
+
+    .hero-photo-col {
+      order: 2;
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
     }
 
     .hero-eyebrow { margin-bottom: 1.4rem; }
@@ -191,14 +205,33 @@
     }
 
     @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .hero-content {
-        padding: 7rem 8rem 5rem;
-        max-width: 860px;
+        padding: 7rem 3rem 5rem 5rem;
+      }
+
+      .hero-photo-col {
+        height: auto;
+      }
+
+      .hero-photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-position: center top;
       }
     }
 
     @media (min-width: 1100px) {
-      .hero-content { padding: 8rem 10rem 6rem; }
+      .hero-content { padding: 8rem 3rem 6rem 8rem; }
+
+      .hero-photo {
+        object-position: center 4.5rem;
+      }
     }
 
     /* ── Section wrapper ─────────────────────────────────── */
@@ -557,6 +590,10 @@
           <a href="#" class="btn btn-primary">Descubre qué está bloqueando tu relación</a>
           <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="btn btn-outline" target="_blank" rel="noopener">Agenda una llamada</a>
         </div>
+      </div>
+
+      <div class="hero-photo-col">
+        <img src="Photo_Doria.JPG" alt="Doria Alvarez" class="hero-photo">
       </div>
 
     </div>
