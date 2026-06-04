@@ -104,18 +104,10 @@
 
     /* ── Nav ─────────────────────────────────────────────── */
     #nav {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.25rem 2rem;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    #nav.scrolled {
-      background: var(--cream);
-      box-shadow: 0 1px 0 var(--blush-dk);
     }
 
     .nav-logo {
@@ -139,7 +131,6 @@
       flex: 1;
       display: grid;
       grid-template-columns: 1fr;
-      min-height: 100svh;
     }
 
     .hero-content {
@@ -147,7 +138,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 5.5rem 2rem 3rem;
+      padding: 3.5rem 2rem 4rem;
     }
 
     .hero-photo-col {
@@ -210,7 +201,7 @@
       }
 
       .hero-content {
-        padding: 7rem 3rem 5rem 5rem;
+        padding: 3rem 3rem 5rem 5rem;
       }
 
       .hero-photo-col {
@@ -227,11 +218,9 @@
     }
 
     @media (min-width: 1100px) {
-      .hero-content { padding: 8rem 3rem 6rem 8rem; }
-
-      .hero-photo {
-        object-position: center 4.5rem;
-      }
+      .hero-grid { grid-template-columns: 3fr 2fr; }
+      .hero-content { padding: 3rem 3rem 6rem 8rem; }
+      .hero-photo { object-position: center top; }
     }
 
     /* ── Section wrapper ─────────────────────────────────── */
@@ -564,14 +553,12 @@
 </head>
 <body>
 
-  <!-- ── NAV ── -->
-  <nav id="nav">
-    <span class="nav-logo">Doria Alvarez</span>
-    <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="btn btn-primary nav-cta" target="_blank" rel="noopener">Agenda una llamada</a>
-  </nav>
-
   <!-- ── HERO ── -->
   <section id="hero">
+    <nav id="nav">
+      <span class="nav-logo">Doria Alvarez</span>
+      <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="btn btn-primary nav-cta" target="_blank" rel="noopener">Agenda una llamada</a>
+    </nav>
     <div class="hero-grid">
 
       <div class="hero-content">
@@ -727,11 +714,6 @@
   </footer>
 
   <script>
-    // Nav scroll shadow
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-
     // Reveal on scroll via IntersectionObserver
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
