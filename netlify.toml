@@ -2,4 +2,3 @@
 # The repo root (this file, the knowledge doc) is NOT served.
 [build]
   publish = "public"
-  command = ""
