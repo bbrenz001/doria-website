@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Doria — Sexóloga y Coach de Intimidad para Latinas en Estados Unidos">
-  <title>Doria — Sexóloga y Coach de Intimidad para Latinas en Estados Unidos</title>
+  <meta name="description" content="Doria Alvarez — Sexóloga y consultora en relaciones e intimidad para mujeres latinas en Estados Unidos.">
+  <title>Doria Alvarez — Sexóloga y Consultora en Relaciones e Intimidad</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -362,86 +362,70 @@
       display: block;
     }
 
-    /* ── How it works ─────────────────────────────────────── */
-    #how { background: var(--cream); }
+    /* ── Contact ──────────────────────────────────────────── */
+    #contact { background: var(--blush); }
 
-    .how-header {
+    .contact-header {
       text-align: center;
-      margin-bottom: 4.5rem;
+      margin-bottom: 3.5rem;
     }
-    .how-header .eyebrow { margin-bottom: 0.85rem; }
-    .how-header h2 {
+    .contact-header h2 {
       font-family: var(--serif);
       font-size: clamp(1.7rem, 3.5vw, 2.6rem);
       font-weight: 300;
+      margin-bottom: 1rem;
     }
-
-    .steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      max-width: 860px;
+    .contact-header p {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      max-width: 46ch;
       margin: 0 auto;
+      line-height: 1.8;
     }
 
-    @media (min-width: 600px) {
-      .steps { grid-template-columns: repeat(3, 1fr); }
+    .contact-form {
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
-    .step {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      position: relative;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
-    /* vertical connector between steps (desktop) */
-    @media (min-width: 600px) {
-      .step + .step::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 38%;
-        background: var(--blush-dk);
-      }
-    }
-
-    /* horizontal connector between steps (mobile) */
-    @media (max-width: 599px) {
-      .step + .step::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 38%;
-        height: 1px;
-        background: var(--blush-dk);
-      }
-    }
-
-    .step-num {
-      font-family: var(--serif);
-      font-size: 4.5rem;
-      font-weight: 300;
-      line-height: 1;
-      color: var(--blush-dk);
-      margin-bottom: 0.75rem;
-    }
-
-    .step-title {
-      font-family: var(--serif);
-      font-size: 1.25rem;
+    .form-group label {
+      font-size: 0.78rem;
       font-weight: 500;
-      color: var(--terracotta);
-      margin-bottom: 0.65rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-mid);
     }
 
-    .step-desc {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.7;
+    .form-group input,
+    .form-group textarea {
+      font-family: var(--sans);
+      font-size: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--blush-dk);
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 2px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--terracotta);
+    }
+
+    .contact-form .btn-primary {
+      align-self: center;
+      margin-top: 0.5rem;
+      border: none;
     }
 
     /* ── CTA banner ───────────────────────────────────────── */
@@ -562,7 +546,7 @@
     <div class="hero-grid">
 
       <div class="hero-content">
-        <p class="eyebrow hero-eyebrow reveal">Sexóloga · Coach de Relaciones</p>
+        <p class="eyebrow hero-eyebrow reveal">Sexóloga · Consultora en Relaciones e Intimidad</p>
         <h1 class="hero-headline reveal delay-1">
           Amas a tu pareja.<br>
           <em>Y aún así,<br>te sientes sola.</em>
@@ -574,7 +558,7 @@
           Trabajo con mujeres latinas que sienten que algo se apagó — en su relación, en su cuerpo, en ellas mismas — y que están listas para recuperarlo.
         </p>
         <div class="hero-ctas reveal delay-4">
-          <a href="#" class="btn btn-primary">Descubre qué está bloqueando tu relación</a>
+          <a href="#contact" class="btn btn-primary">Escríbeme</a>
           <a href="https://wa.me/5214421195049?text=Hola%20Doria%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo." class="btn btn-outline" target="_blank" rel="noopener">Agenda una llamada</a>
         </div>
       </div>
@@ -627,10 +611,10 @@
           <h2 class="about-headline reveal delay-1">Formada para escuchar.<br>Aquí para acompañarte.</h2>
           <div class="about-body">
             <p class="reveal delay-2">
-              Soy Doria Alvarez, sexóloga, con formación especializada en salud sexual y dinámicas de pareja.
+              Soy Doria Alvarez, sexóloga y consultora en relaciones e intimidad, con formación especializada en salud sexual y dinámicas de pareja. Trabajo exclusivamente en español con mujeres latinas que viven en Estados Unidos — porque creo que hay cosas que solo se pueden decir en el idioma en que las sentiste. Aquí no tienes que traducir tus emociones ni buscar las palabras correctas en otra lengua. Puedes hablar libremente, en tu idioma, desde tu experiencia.
             </p>
             <p class="reveal delay-3">
-              Sé que muchas cargamos años de silencio, mensajes contradictorios sobre nuestro cuerpo y una profunda soledad dentro de relaciones que, en el papel, "funcionan". Mi trabajo es acompañarte a deshacer eso — con claridad, calidez y con herramientas que realmente ayudan a mejorar las cosas.
+              Sé que muchas cargamos años de silencio, mensajes contradictorios sobre nuestro cuerpo y una profunda soledad dentro de relaciones que, en el papel, "funcionan". Mi trabajo es acompañarte a deshacer eso — con claridad, con honestidad, y con herramientas que realmente cambian las cosas.
             </p>
           </div>
           <span class="signature reveal delay-4">Doria Alvarez</span>
@@ -640,31 +624,33 @@
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ── -->
-  <section id="how">
+  <!-- ── CONTACT ── -->
+  <section id="contact">
     <div class="section-wrap">
-      <div class="how-header">
-        <p class="eyebrow reveal">El proceso</p>
-        <h2 class="reveal delay-1">Así empezamos</h2>
+      <div class="contact-header">
+        <h2 class="reveal">Hablemos</h2>
+        <p class="reveal delay-1">Si algo de lo que leíste resonó contigo, escríbeme. Sin formularios largos, sin compromisos. Solo cuéntame brevemente qué está pasando.</p>
       </div>
 
-      <div class="steps">
-        <div class="step reveal delay-1">
-          <div class="step-num">01</div>
-          <div class="step-title">Cuéntame cómo estás</div>
-          <p class="step-desc">Responde unas preguntas breves y confidenciales sobre tu relación y tu bienestar. Sin etiquetas, sin juicio — solo tú, siendo honesta contigo misma.</p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html" class="contact-form reveal delay-2">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden>
+          <label>No llenar este campo: <input name="bot-field"></label>
+        </p>
+        <div class="form-group">
+          <label for="contact-name">Nombre</label>
+          <input type="text" id="contact-name" name="name" required>
         </div>
-        <div class="step reveal delay-2">
-          <div class="step-num">02</div>
-          <div class="step-title">Te escribo personalmente</div>
-          <p class="step-desc">Leo lo que compartiste y te envío un mensaje directo con lo que observo y algunas reflexiones para empezar a mover las cosas.</p>
+        <div class="form-group">
+          <label for="contact-email">Correo electrónico</label>
+          <input type="email" id="contact-email" name="email" required>
         </div>
-        <div class="step reveal delay-3">
-          <div class="step-num">03</div>
-          <div class="step-title">Agendamos tu primera sesión</div>
-          <p class="step-desc">Una llamada de 30 minutos por $30 USD. Sin compromiso a largo plazo — solo un espacio para conocernos, hablar de lo que estás viviendo, y ver cómo puedo acompañarte.</p>
+        <div class="form-group">
+          <label for="contact-message">¿Qué te trajo aquí?</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      </form>
     </div>
   </section>
 
@@ -675,7 +661,7 @@
       <h2 class="cta-headline reveal delay-1">Ya es tiempo de que alguien te escuche de verdad.</h2>
       <p class="cta-sub reveal delay-2">Sin juicio. En tu idioma. Con una metodología que funciona.</p>
       <div class="reveal delay-3">
-        <a href="#" class="btn btn-cream">Descubre qué está bloqueando tu relación</a>
+        <a href="#contact" class="btn btn-cream">Escríbeme</a>
       </div>
     </div>
   </section>
@@ -685,7 +671,7 @@
     <div class="footer-top">
       <div>
         <span class="footer-brand">Doria Alvarez</span>
-        <span class="footer-domain">Sexóloga &amp; Coach de Relaciones · doriaalvarez.com</span>
+        <span class="footer-domain">Sexóloga y Consultora en Relaciones e Intimidad · doriaalvarez.com</span>
       </div>
       <nav class="footer-links" aria-label="Redes sociales">
         <a href="https://www.instagram.com/doriasexologa" class="footer-link" aria-label="Instagram" target="_blank" rel="noopener">

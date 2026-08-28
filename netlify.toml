@@ -1,0 +1,5 @@
+# Static site — no build step. Netlify publishes the contents of public/.
+# The repo root (this file, the knowledge doc) is NOT served.
+[build]
+  publish = "public"
+  command = ""
