@@ -44,11 +44,22 @@ Last updated: May 2026
 
 **Brian's role** Building the quiz funnel, automation stack, and content system. This is also a real portfolio project for MindshiftOS LLC.
 ## What exists
-- `index.html` — single page site, built via Claude Code
+- `public/index.html` — single page site (built via Claude Code). Deployable files live in `public/`; this knowledge doc stays at repo root and is NOT served.
+- `public/gracias.html` — branded thank-you page the contact form redirects to
 - GitHub repo ✅: https://github.com/bbrenz001/doria-website
-- Hosted locally at: C:/Users/Brian/Google Drive/[path]/doria-website/index.html
-- Domain decided: doriaalvarez.com (available on Namecheap, not yet purchased)
-- doriasexologa.com to redirect to doriaalvarez.com
+- **Live at https://doriaalvarez.com** — hosted on Netlify (site `adorable-queijadas-09b79a`, MindshiftOS LLC team)
+- **Continuous deploy ✅ (2026-08-29):** every `git push` to `main` auto-deploys. Netlify config: branch `main`, publish dir `public`, no build command (`netlify.toml`). Wired via Netlify deploy key + GitHub push webhook.
+- doriasexologa.com to redirect to doriaalvarez.com — not done yet
+
+## Framing (2026-08-29)
+- Public title: **"Sexóloga · Consultora en Relaciones e Intimidad"** (hero, `<title>`, meta, footer).
+- Never "Coach" — Doria can lose her Mexico therapist license if seen advertising as a "Coach" here. Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand.
+- Wording still pending Doria's explicit sign-off as of 2026-08-29.
+
+## Contact form (2026-08-29)
+- Netlify Forms (`data-netlify="true"` + `bot-field` honeypot), form name `contact`, fields name/email/message. Redirects to `/gracias.html`.
+- Submissions emailed to brenzelbrian@gmail.com (Netlify form notification hook). Also visible in Netlify dashboard → Forms.
+- The Tally/Make.com quiz funnel is NOT wired to the site right now — Doria paused it. If it comes back it gets rebuilt in n8n.
 
 ## Tech stack
 - Plain HTML/CSS, no framework
@@ -71,12 +82,14 @@ Last updated: May 2026
 - Quiz CTA → quiz page → Doria sends Calendly link personally via WhatsApp
 
 ## Next session tasks
-- [ ] Purchase doriaalvarez.com on Namecheap
-- [ ] Set up Calendly for Doria
-- [ ] Connect Calendly to Stripe ($30 USD / 30 min)
-- [ ] Replace booking button hrefs with live Calendly link
-- [ ] Build quiz page (6 questions, approved list on file in Spanish)
+- [x] ~~Purchase doriaalvarez.com~~ — done, live on Netlify
+- [x] ~~Contact form~~ — done (Netlify Forms → email), 2026-08-29
+- [x] ~~Continuous deploy from GitHub~~ — done, 2026-08-29
+- [ ] Doria's sign-off on the "Consultora en Relaciones e Intimidad" wording
+- [ ] Set up Calendly for Doria + connect to Stripe ($30 USD / 30 min) — deferred, no booking link on site yet
 - [ ] Add testimonials section once responses come in
+- [ ] doriasexologa.com → doriaalvarez.com redirect
+- [ ] (only if quiz is reactivated) rebuild quiz funnel in n8n
 
 ## Testimonial outreach
 - WhatsApp message drafted in Mexican Spanish — ready to send
