@@ -51,10 +51,11 @@ Last updated: May 2026
 - **Continuous deploy ✅ (2026-08-29):** every `git push` to `main` auto-deploys. Netlify config: branch `main`, publish dir `public`, no build command (`netlify.toml`). Wired via Netlify deploy key + GitHub push webhook.
 - doriasexologa.com to redirect to doriaalvarez.com — not done yet
 
-## Framing (updated 2026-09-05)
-- Public title: **"Sexóloga · Asesora en Relaciones e Intimidad"** (hero, `<title>`, meta description, footer, About-section body copy — all 5 occurrences updated).
-- Never "Coach"/"Coaching" — Doria can lose her Mexico therapist license if seen advertising as a "Coach" here. **"Asesoría" is the replacement family of terms for "coach/coaching"**, per Brian 2026-09-05 — used "Asesora" (not "Consultora") as the actual on-page noun for grammatical parallelism with "Sexóloga" (both person-role nouns). Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand.
-- Edited in the site's `public/index.html` 2026-09-05, **not yet pushed** — confirm the "Asesora" (vs. literal "Asesoría") word choice before this goes live, and this is still pending Doria's own final sign-off same as the "Consultora" wording was.
+## Framing (updated 2026-09-06)
+- Public title: **"Sexóloga · Consultora en Relaciones e Intimidad"** (hero, `<title>`, meta description, footer, About-section body copy).
+- 2026-09-05: briefly tried swapping in "Asesora"/"Asesoría" (as a replacement for "coach/coaching"). **2026-09-06: Brian reverted this — keep "Consultora."** All 5 occurrences reverted in `public/index.html`.
+- Never "Coach"/"Coaching". Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand. **Open question raised 2026-09-06, unresolved:** does "Sexóloga" itself read as psychologist-adjacent to an average visitor, in a way that could create the same kind of risk the site already avoids with "Psicóloga/terapeuta"? Not settled — see Daily/2026-09-06.
+- Wording still pending Doria's explicit sign-off.
 
 ## Contact form (2026-08-29)
 - Netlify Forms (`data-netlify="true"` + `bot-field` honeypot), form name `contact`, fields name/email/message. Redirects to `/gracias.html`.
@@ -85,7 +86,8 @@ Last updated: May 2026
 - [x] ~~Purchase doriaalvarez.com~~ — done, live on Netlify
 - [x] ~~Contact form~~ — done (Netlify Forms → email), 2026-08-29
 - [x] ~~Continuous deploy from GitHub~~ — done, 2026-08-29
-- [ ] Doria's sign-off on the "Asesora en Relaciones e Intimidad" wording (updated 2026-09-05 from "Consultora")
+- [ ] Doria's sign-off on the "Consultora en Relaciones e Intimidad" wording
+- [ ] Resolve the "does Sexóloga read as psychologist-adjacent" question raised 2026-09-06 before treating the framing as final
 - [ ] Set up Calendly for Doria + connect to Stripe ($30 USD / 30 min) — deferred, no booking link on site yet
 - [ ] Add testimonials section once responses come in
 - [ ] doriasexologa.com → doriaalvarez.com redirect
