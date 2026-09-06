@@ -54,8 +54,10 @@ Last updated: May 2026
 ## Framing (updated 2026-09-06)
 - Public title: **"Sexóloga · Consultora en Relaciones e Intimidad"** (hero, `<title>`, meta description, footer, About-section body copy).
 - 2026-09-05: briefly tried swapping in "Asesora"/"Asesoría" (as a replacement for "coach/coaching"). **2026-09-06: Brian reverted this — keep "Consultora."** All 5 occurrences reverted in `public/index.html`.
-- Never "Coach"/"Coaching". Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand. **Open question raised 2026-09-06, unresolved:** does "Sexóloga" itself read as psychologist-adjacent to an average visitor, in a way that could create the same kind of risk the site already avoids with "Psicóloga/terapeuta"? Not settled — see Daily/2026-09-06.
-- Wording still pending Doria's explicit sign-off.
+- Never "Coach"/"Coaching". Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand.
+- **"Sexóloga" risk question, researched 2026-09-06 (not a lawyer consult — Brian's call, no budget for one yet; general pattern-matching from public reporting):** "Sexóloga"/"sexologist" is not a legally protected US title the way "psychologist"/"therapist" is, so the noun itself isn't the exposure. The real enforcement pattern targets the *substance* of what's offered, not the label — see the 2026 California "Crappy Childhood Fairy" case, fined for unlicensed psychology practice while using "coach," not "therapist." Checked the live site's actual copy — no "terapia"/clinical/diagnostic language found in `index.html`, so the current public copy was already reasonably safe going in.
+- **Added 2026-09-06: a footer disclaimer**, the standard low-cost mitigation every legitimate coaching site in this space uses (confirmed via research — it's boilerplate practice, not something requiring a lawyer to draft): "Este sitio ofrece servicios de consultoría en relaciones e intimidad, no terapia ni tratamiento psicológico, y no sustituye la atención de un profesional de salud mental con licencia en tu lugar de residencia." New `.footer-disclaimer` CSS class, sits above the copyright line.
+- Committed locally (`[see git log]`), **not yet pushed** — same standing caution as any change to Doria's real public framing.
 
 ## Contact form (2026-08-29)
 - Netlify Forms (`data-netlify="true"` + `bot-field` honeypot), form name `contact`, fields name/email/message. Redirects to `/gracias.html`.
