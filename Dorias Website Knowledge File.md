@@ -51,10 +51,10 @@ Last updated: May 2026
 - **Continuous deploy ✅ (2026-08-29):** every `git push` to `main` auto-deploys. Netlify config: branch `main`, publish dir `public`, no build command (`netlify.toml`). Wired via Netlify deploy key + GitHub push webhook.
 - doriasexologa.com to redirect to doriaalvarez.com — not done yet
 
-## Framing (2026-08-29)
-- Public title: **"Sexóloga · Consultora en Relaciones e Intimidad"** (hero, `<title>`, meta, footer).
-- Never "Coach" — Doria can lose her Mexico therapist license if seen advertising as a "Coach" here. Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand.
-- Wording still pending Doria's explicit sign-off as of 2026-08-29.
+## Framing (updated 2026-09-05)
+- Public title: **"Sexóloga · Asesora en Relaciones e Intimidad"** (hero, `<title>`, meta description, footer, About-section body copy — all 5 occurrences updated).
+- Never "Coach"/"Coaching" — Doria can lose her Mexico therapist license if seen advertising as a "Coach" here. **"Asesoría" is the replacement family of terms for "coach/coaching"**, per Brian 2026-09-05 — used "Asesora" (not "Consultora") as the actual on-page noun for grammatical parallelism with "Sexóloga" (both person-role nouns). Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand.
+- Edited in the site's `public/index.html` 2026-09-05, **not yet pushed** — confirm the "Asesora" (vs. literal "Asesoría") word choice before this goes live, and this is still pending Doria's own final sign-off same as the "Consultora" wording was.
 
 ## Contact form (2026-08-29)
 - Netlify Forms (`data-netlify="true"` + `bot-field` honeypot), form name `contact`, fields name/email/message. Redirects to `/gracias.html`.
@@ -85,7 +85,7 @@ Last updated: May 2026
 - [x] ~~Purchase doriaalvarez.com~~ — done, live on Netlify
 - [x] ~~Contact form~~ — done (Netlify Forms → email), 2026-08-29
 - [x] ~~Continuous deploy from GitHub~~ — done, 2026-08-29
-- [ ] Doria's sign-off on the "Consultora en Relaciones e Intimidad" wording
+- [ ] Doria's sign-off on the "Asesora en Relaciones e Intimidad" wording (updated 2026-09-05 from "Consultora")
 - [ ] Set up Calendly for Doria + connect to Stripe ($30 USD / 30 min) — deferred, no booking link on site yet
 - [ ] Add testimonials section once responses come in
 - [ ] doriasexologa.com → doriaalvarez.com redirect
