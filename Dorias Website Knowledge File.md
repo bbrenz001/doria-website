@@ -57,7 +57,7 @@ Last updated: May 2026
 - Never "Coach"/"Coaching". Never "Psicóloga/terapeuta" toward US clients (US legal). "Sexóloga" is kept — it's her real Mexican credential and the @doriasexologa brand.
 - **"Sexóloga" risk question, researched 2026-09-06 (not a lawyer consult — Brian's call, no budget for one yet; general pattern-matching from public reporting):** "Sexóloga"/"sexologist" is not a legally protected US title the way "psychologist"/"therapist" is, so the noun itself isn't the exposure. The real enforcement pattern targets the *substance* of what's offered, not the label — see the 2026 California "Crappy Childhood Fairy" case, fined for unlicensed psychology practice while using "coach," not "therapist." Checked the live site's actual copy — no "terapia"/clinical/diagnostic language found in `index.html`, so the current public copy was already reasonably safe going in.
 - **Added 2026-09-06: a footer disclaimer**, the standard low-cost mitigation every legitimate coaching site in this space uses (confirmed via research — it's boilerplate practice, not something requiring a lawyer to draft): "Este sitio ofrece servicios de consultoría en relaciones e intimidad, no terapia ni tratamiento psicológico, y no sustituye la atención de un profesional de salud mental con licencia en tu lugar de residencia." New `.footer-disclaimer` CSS class, sits above the copyright line.
-- Committed locally (`1542075`), **not yet pushed** — same standing caution as any change to Doria's real public framing.
+- Committed and **pushed** (`b6c5d7f`, 2026-09-06). **Netlify deploy did not go through** — Brian's Netlify team is out of credits (shared meter across all his sites, same issue that pushed The True Card to Cloudflare Pages 2026-09-02). Confirmed: the live site still doesn't have the disclaimer as of this push. **This site needs the same Netlify → Cloudflare Pages migration, pending — Brian's call, once he's at a proper computer.** Runbook to follow: Agent 1 vault → `100 - Business/The True Card - Netlify to Cloudflare Pages Migration.md`.
 
 ## Contact form (2026-08-29)
 - Netlify Forms (`data-netlify="true"` + `bot-field` honeypot), form name `contact`, fields name/email/message. Redirects to `/gracias.html`.
@@ -88,8 +88,9 @@ Last updated: May 2026
 - [x] ~~Purchase doriaalvarez.com~~ — done, live on Netlify
 - [x] ~~Contact form~~ — done (Netlify Forms → email), 2026-08-29
 - [x] ~~Continuous deploy from GitHub~~ — done, 2026-08-29
+- [ ] **Migrate doriaalvarez.com from Netlify to Cloudflare Pages** — blocking, Netlify's shared-team credits are maxed out so nothing currently pushed is actually going live. Brian's call to do this once he's at a proper computer. Follow the True Card's runbook: `100 - Business/The True Card - Netlify to Cloudflare Pages Migration.md`.
 - [ ] Doria's sign-off on the "Consultora en Relaciones e Intimidad" wording
-- [ ] Resolve the "does Sexóloga read as psychologist-adjacent" question raised 2026-09-06 before treating the framing as final
+- [x] ~~Resolve the "does Sexóloga read as psychologist-adjacent" question~~ — researched 2026-09-06, not itself the exposure; mitigated with a footer disclaimer (see Framing section above). Not pushed live yet (see Cloudflare item above).
 - [ ] Set up Calendly for Doria + connect to Stripe ($30 USD / 30 min) — deferred, no booking link on site yet
 - [ ] Add testimonials section once responses come in
 - [ ] doriasexologa.com → doriaalvarez.com redirect
